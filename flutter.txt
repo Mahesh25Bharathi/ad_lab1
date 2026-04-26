@@ -1,0 +1,173 @@
+Clear procedure: Flutter app in Android Studio
+Part 1: Check Flutter setup in college PC
+
+Open Android Studio.
+
+Go to:
+
+File → Settings → Plugins
+
+Search:
+
+Flutter
+
+If Flutter plugin is not installed, click Install. Android Studio may also install Dart plugin, then restart. Official Flutter docs say Flutter plugin is installed from Settings → Plugins → Marketplace → Flutter → Install.
+
+Now open terminal in Android Studio:
+
+View → Tool Windows → Terminal
+
+Type:
+
+flutter doctor
+
+If it shows Flutter details, setup is okay.
+
+
+
+Part 2: Create Flutter project
+
+In Android Studio welcome screen:
+
+New Flutter Project
+
+Select:
+
+Flutter
+
+Then give Flutter SDK path. Usually it may be:
+
+C:\src\flutter
+
+or
+
+C:\flutter
+
+Then click Next.
+
+Project name:
+
+expense_app
+
+Choose project location:
+
+Desktop
+
+Click Create / Finish.
+
+Official docs say Android Studio creates Flutter projects from New Flutter Project, then asks for Flutter SDK path, project name, description, and location.
+
+
+
+Part 3: Open main.dart
+
+In left side project files:
+
+lib → main.dart
+
+Delete everything inside main.dart.
+
+Paste your app code.
+
+Example simple test code:
+
+import 'package:flutter/material.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: Text("My First Flutter App")),
+        body: Center(
+          child: Text("Hello Flutter"),
+        ),
+      ),
+    );
+  }
+}
+
+
+Part 4: Select device
+
+Top bar in Android Studio has device dropdown.
+
+Choose one:
+
+Chrome
+
+or
+
+Android Emulator
+
+For lab, Chrome is easiest if available.
+
+If emulator is needed:
+
+Tools → Device Manager → Create Device
+
+Choose phone like Pixel → Next → Download system image if needed → Finish → Start emulator. Flutter docs say Flutter apps can run on Android emulator or physical Android device.
+
+
+
+Part 5: Run app
+
+Click green button:
+
+▶ Run
+
+Wait.
+
+Output should open in Chrome/emulator.
+
+Common errors and fix
+Error 1: Flutter SDK not found
+
+Set SDK path:
+
+File → Settings → Languages & Frameworks → Flutter
+
+Add:
+
+C:\src\flutter
+
+or ask lab staff for Flutter SDK path.
+
+Error 2: No device selected
+
+Select:
+
+Chrome
+
+or start emulator from:
+
+Tools → Device Manager
+Error 3: main.dart has red lines
+
+Use:
+
+Alt + Enter
+
+or check spelling.
+
+Most common mistake:
+
+runApp(MyApp())
+
+must end with semicolon:
+
+runApp(MyApp());
+Practical exam order to remember
+1. Open Android Studio
+2. Check Flutter plugin
+3. Create New Flutter Project
+4. Open lib/main.dart
+5. Paste code
+6. Select Chrome / Emulator
+7. Click Run
+8. Show output
+Viva answer
+
+Flutter app is created using Android Studio. We write code in lib/main.dart, select a device such as Chrome or Android Emulator, and run the app using the Run button.
